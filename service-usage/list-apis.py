@@ -3,12 +3,6 @@
 from google.cloud import service_usage_v1
 import time
 
-# Config [RETURN_STATUS] section
-return_status_200 = self.config['RETURN_STATUS']['RETURN_STATUS_200']
-return_status_500 = self.config['RETURN_STATUS']['RETURN_STATUS_500']
-return_status_success = self.config['RETURN_STATUS']['RETURN_STATUS_SUCCESS']
-return_status_fail = self.config['RETURN_STATUS']['RETURN_STATUS_FAIL']
-
 
 def list_services(project_number: int) -> list[str]:
 
