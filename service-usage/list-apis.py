@@ -24,7 +24,8 @@ def list_services(project_number: int) -> list[str]:
         return_val = [response.name for response in page_result]
 
         return return_val
-    except 
+    except Exception as exp:
+        raise
 
 
 def enable_service(project_number: int, service_name: str) -> str:
@@ -71,9 +72,12 @@ def disable_service(project_number: int, service_name: str) -> str:
     return response
 
 if __name__ == '__main__':
-    #print(list_services(76786460898))
-    #print(enable_service(76786460898, 'datalineage.googleapis.com'))
-    print(disable_service(76786460898, 'datalineage.googleapis.com'))
+    #r = list_services(76786460898)
+    #print(len(r))
+
+    r = enable_service(76786460898, 'datalineage.googleapis.com')
+    print(r.service.state)
+    #print(disable_service(76786460898, 'datalineage.googleapis.com'))
     #projects/76786460898/services/datalineage.googleapis.com
     
     
